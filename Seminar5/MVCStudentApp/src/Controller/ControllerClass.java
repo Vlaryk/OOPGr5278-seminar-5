@@ -11,6 +11,9 @@ import Model.Domain.Student;
 import View.ViewClass;
 import View.ViewClassEng;
 
+/**
+ * Контроллер
+ */
 public class ControllerClass implements iGetController {
 
     private ArrayList<iGetModel> models = new ArrayList<>();
@@ -18,13 +21,20 @@ public class ControllerClass implements iGetController {
     private iGetView view = new ViewClass();
     private List<Student> studBuffer = new ArrayList<>();
 
-    public ControllerClass() {
-//        this.model = model;
-    }
 
+    /**
+     * Добавляет модель в контроллер
+     * @param model модель
+     */
     public void addModel(iGetModel model) {
         this.models.add(model);
     }
+
+    /**
+     * Проверяет ести ли студенты в списке
+     * @param stud список студентов
+     * @return true или false
+     */
     private boolean tesdData(List<Student> stud)
     {
         if(stud.size()>0)
@@ -56,8 +66,11 @@ public class ControllerClass implements iGetController {
         //MVC
         //view.printAllStudent(model.getStudents());
     }
-    
 
+
+    /**
+     * Запускает контроллер
+     */
     public void run()
     {   Scanner scan = new Scanner(System.in);
         System.out.println("Choose language\nВыберите язык\nru, eng:");
